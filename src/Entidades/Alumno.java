@@ -48,6 +48,31 @@ public class Alumno {
     public String toString() {
         return "Alumno{" + "legajo=" + legajo + ", apellido=" + apellido + ", nombre=" + nombre  + '}';
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 29 * hash + this.legajo;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Alumno other = (Alumno) obj;
+        if (this.legajo != other.legajo) {
+            return false;
+        }
+        return true;
+    }
     
     
     
