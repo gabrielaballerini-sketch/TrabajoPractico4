@@ -37,6 +37,10 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
         btnNuevo = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
 
+        setClosable(true);
+        setResizable(true);
+        setTitle("Formulario de alumno");
+
         legajo.setText("Legajo");
         legajo.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
