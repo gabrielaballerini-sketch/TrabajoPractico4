@@ -1,17 +1,10 @@
 
-import trabajopractico4.Alumno;
-import trabajopractico4.Materia;
+import Entidades.Alumno;
+import Entidades.Materia;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author Capotes
- */
+
+
 public class Colegio {
     
     public static void main(String[] args) {
