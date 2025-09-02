@@ -13,6 +13,8 @@ public class Colegio {
     
     
     Materia web= new Materia(001, "Web 2", 2);
+    
+    
       Materia matematica= new Materia(002, "Matematica", 1);
       Materia laboratorio= new Materia(003, "Laboratorio 1", 1);
       
@@ -30,6 +32,12 @@ public class Colegio {
       
       alumno1.cantidadMaterias();
       alumno2.cantidadMaterias();
+      
+      
+    
+      
+      
+      
     
     
 }

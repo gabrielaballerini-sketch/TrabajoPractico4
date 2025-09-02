@@ -5,6 +5,9 @@
  */
 package vistas;
 
+import Entidades.Materia;
+import java.util.HashSet;
+
 /**
  *
  * @author fatimaalcaraz
@@ -16,6 +19,7 @@ public class GestorAlumnos extends javax.swing.JFrame {
      */
     public GestorAlumnos() {
         initComponents();
+        
     }
 
     /**
@@ -173,6 +177,7 @@ public class GestorAlumnos extends javax.swing.JFrame {
             }
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Escritorio;
@@ -185,4 +190,26 @@ public class GestorAlumnos extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     // End of variables declaration//GEN-END:variables
+
+
+
+//    
+
+
 }
+
+
+
+    
+  
+
+
+    
+    
+
+
+
+
+
+
+

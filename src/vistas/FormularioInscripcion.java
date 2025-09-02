@@ -6,6 +6,8 @@
 
 package vistas;
 
+import Entidades.Materia;
+
 /**
  *
  * @author Sutara
@@ -15,6 +17,7 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
     /** Creates new form FormularioInscripcion */
     public FormularioInscripcion() {
         initComponents();
+        llenarCombos();
     }
 
     /** This method is called from within the constructor to
@@ -133,7 +136,31 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
     private javax.swing.JButton jbInscribir;
     private javax.swing.JButton jbSalir3;
     private javax.swing.JComboBox<String> jcbAlumnos;
-    private javax.swing.JComboBox<String> jcbMaterias;
+    private javax.swing.JComboBox<Materia> jcbMaterias;
     // End of variables declaration//GEN-END:variables
 
+    
+    
+private  void llenarCombos(){
+    
+    
+    
+    
+    
+      Materia materia1=new Materia(001, "Web 2", 2);
+      
+       Materia materia2=new Materia(002, "Matematicas", 1);
+      
+        Materia materia3=new Materia(003, "Laboratorio", 1);
+    
+    
+    jcbMaterias.addItem(materia1);
+     jcbMaterias.addItem(materia2);
+      jcbMaterias.addItem(materia3);
+    
+    
+    
+    
+    
+}
 }

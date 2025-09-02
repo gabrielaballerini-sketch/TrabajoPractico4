@@ -12,6 +12,7 @@ public class Alumno {
     private int legajo;
     private String apellido;
     private String nombre;
+    
     private HashSet <Materia> materias= new HashSet();
 
     public Alumno(int legajo, String apellido, String nombre) {
