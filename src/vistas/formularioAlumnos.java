@@ -14,27 +14,18 @@ import java.util.HashSet;
  */
 public class formularioAlumnos extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form formularioAlumnos
-     */
     
-    private HashSet<Alumno> alumnos;
+    
+  
 
-    public formularioAlumnos() {
+  public formularioAlumnos() {
+        initComponents();
+        
+      
+        
+        
+       
     }
-    
-    
-    
-    
-//    
-//    public formularioAlumnos() {
-//        initComponents();
-//        
-//        this.alumnos=alumnos;
-//        
-//        
-//        
-//    }
 
     /**
      * This method is called from within the constructor to initialize the form.

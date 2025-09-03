@@ -5,6 +5,7 @@
  */
 package vistas;
 
+
 import Entidades.Alumno;
 import Entidades.Materia;
 import java.util.HashSet;
@@ -14,10 +15,8 @@ import java.util.HashSet;
  * @author fatimaalcaraz
  */
 public class GestorAlumnos extends javax.swing.JFrame {
-    private HashSet<Alumno> listaAlumno;
-    /**
-     * Creates new form GestorAlumnos
-     */
+   
+  HashSet <Alumno> alumnos;
     public GestorAlumnos() {
         initComponents();
         
@@ -138,7 +137,7 @@ public class GestorAlumnos extends javax.swing.JFrame {
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         Escritorio.removeAll();
         Escritorio.repaint();
-        FormularioInscripcion formu = new FormularioInscripcion();
+        FormularioInscripcion formu = new FormularioInscripcion(alumnos);
         formu.setVisible(true);
         Escritorio.add(formu);
         Escritorio.moveToFront(formu);

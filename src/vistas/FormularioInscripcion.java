@@ -20,10 +20,16 @@ import java.util.HashSet;
  */
 public class FormularioInscripcion extends javax.swing.JInternalFrame {
 
-    /** Creates new form FormularioInscripcion */
-    public FormularioInscripcion() {
+    HashSet <Alumno> alumnos;
+
+   
+    
+    
+    public FormularioInscripcion(HashSet <Alumno> alumnos) {
         initComponents();
         llenarCombos();
+        //this.alumnos= alumnos;
+        llenarAlumnos(alumnos);
         
         
     
@@ -184,9 +190,7 @@ private void llenarAlumnos(HashSet<Alumno>alumnos){
     for (Alumno alumno : alumnos) {
         
         jcbAlumnos.addItem(alumno.toString());
-        
-        
-        
+    
     }
     
   

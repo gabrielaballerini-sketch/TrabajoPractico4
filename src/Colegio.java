@@ -11,31 +11,15 @@ public class Colegio {
     
     
     public static HashSet<Alumno> alumnos =new HashSet<>();
-    public static HashSet<Materia>materia =new HashSet<>();
+    public static HashSet<Materia> materia =new HashSet<>();
     
-    
-    
-    
-    
-//    
-//   public static HashSet<Alumno> devuelveListaAlumnos(){
-//       HashSet <Alumno> lista = new HashSet();
-//    
-//        lista.add(new Alumno (1001, "Lòpez", "Martin"));
-//      lista.add(new Alumno (1002, "Martínez", "Brenda"));
-//       return lista;
-//   }
-//   
-   
    
     public static void main(String[] args) {
     
    
     
     
-    Materia web= new Materia(001, "Web 2", 2);
-    
-    
+      Materia web= new Materia(001, "Web 2", 2);
       Materia matematica= new Materia(002, "Matematica", 1);
       Materia laboratorio= new Materia(003, "Laboratorio 1", 1);
       
