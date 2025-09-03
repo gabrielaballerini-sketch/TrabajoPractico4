@@ -6,6 +6,10 @@
 
 package vistas;
 
+
+
+
+import Entidades.Alumno;
 import Entidades.Materia;
 
 /**
@@ -18,6 +22,7 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
     public FormularioInscripcion() {
         initComponents();
         llenarCombos();
+        
     }
 
     /** This method is called from within the constructor to
@@ -160,6 +165,12 @@ private  void llenarCombos(){
     
     
     
+    
+    
+}
+
+private void llenarAlumnos(){
+   // Colegio.devuelveListaAlumnos();
     
     
 }

@@ -1,15 +1,25 @@
 
 import Entidades.Alumno;
 import Entidades.Materia;
+import java.util.HashSet;
 
 
 
 
 public class Colegio {
     
+    
+    public static HashSet<Alumno> devuelveListaAlumnos(){
+        
+        HashSet <Alumno> lista = new HashSet();
+    
+        lista.add(new Alumno (1001, "Lòpez", "Martin"));
+        lista.add(new Alumno (1002, "Martínez", "Brenda"));
+        return lista;
+    }
     public static void main(String[] args) {
     
-    
+   
     
     
     Materia web= new Materia(001, "Web 2", 2);
@@ -18,9 +28,8 @@ public class Colegio {
       Materia matematica= new Materia(002, "Matematica", 1);
       Materia laboratorio= new Materia(003, "Laboratorio 1", 1);
       
-      Alumno alumno1= new Alumno (1001, "Lòpez", "Martin");
-      Alumno alumno2= new Alumno (1002, "Martínez", "Brenda");
-      
+     
+      /*
       alumno1.agregarMateria(web);
       alumno1.agregarMateria(matematica);
       alumno1.agregarMateria(laboratorio);
@@ -32,7 +41,7 @@ public class Colegio {
       
       alumno1.cantidadMaterias();
       alumno2.cantidadMaterias();
-      
+      */
       
     
       
