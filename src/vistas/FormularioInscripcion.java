@@ -9,8 +9,10 @@ package vistas;
 
 
 
+
 import Entidades.Alumno;
 import Entidades.Materia;
+import java.util.HashSet;
 
 /**
  *
@@ -22,6 +24,13 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
     public FormularioInscripcion() {
         initComponents();
         llenarCombos();
+        
+        
+    
+    //HashSet<Alumno>alumnos
+        
+ //      llenarAlumnos(HashSet<Alumno>alumnos);
+        
         
     }
 
@@ -169,8 +178,18 @@ private  void llenarCombos(){
     
 }
 
-private void llenarAlumnos(){
-   // Colegio.devuelveListaAlumnos();
+private void llenarAlumnos(HashSet<Alumno>alumnos){
+    
+    
+    for (Alumno alumno : alumnos) {
+        
+        jcbAlumnos.addItem(alumno.toString());
+        
+        
+        
+    }
+    
+  
     
     
 }
