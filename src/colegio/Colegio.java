@@ -45,8 +45,6 @@ public class Colegio {
       
 
       
-      alumno1.cantidadMaterias();
-      alumno2.cantidadMaterias();
       
         
       

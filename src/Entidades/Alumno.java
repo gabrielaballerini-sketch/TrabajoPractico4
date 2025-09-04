@@ -3,6 +3,7 @@ package Entidades;
 
 import java.util.HashSet;
 import javax.swing.JOptionPane;
+import vistas.GestorAlumnos;
 
 
 public class Alumno {
@@ -83,19 +84,30 @@ public class Alumno {
     public void agregarMateria(Materia mat){
         if(materias.add(mat)){
            /*System.out.println("Materia "+ mat.getNombre()+ " agregada correctamente");*/
-            JOptionPane.showMessageDialog(null, "se agrego la materia correctamente");
+            JOptionPane.showMessageDialog(null, "se agrego la inscripcion  correctamente");
         } else {
             /*System.out.println("En la materia "+ mat.getNombre()+ " ya esta inscripto/a");*/
-             JOptionPane.showMessageDialog(null, "no se grego, la materia ya existe");
+             JOptionPane.showMessageDialog(null, "no se agrego, la inscripcion ya existe");
         }
         
     }
     
-    public void cantidadMaterias(){
-        System.out.println("La cantidad de materias en las que esta inscripto/a es: " + materias.size());
+    public void cantidadMaterias(Alumno alumno){
+      /*  System.out.println("La cantidad de materias en las que esta inscripto/a es: " + materias.size());*/
+        if(materias.isEmpty())
+                JOptionPane.showMessageDialog(null, "NO ESTA INSCRIPTO EN NIGUNA MATERIA");
+          else{
+      for (Materia materia : materias) {
+         
+            JOptionPane.showMessageDialog(null, materia);
+          }
+        
+        }   
+        }
+      
             
     }
     
-}
+
     
     
