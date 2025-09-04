@@ -26,6 +26,7 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
     
     public FormularioInscripcion() {
         initComponents();
+       
         jbMaterias.setEnabled(false);
         llenarCombos();
         llenarAlumnos();
@@ -170,7 +171,7 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jcbMateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbMateriasActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_jcbMateriasActionPerformed
 
     private void jcbAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbAlumnosActionPerformed

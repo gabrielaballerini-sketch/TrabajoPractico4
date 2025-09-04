@@ -7,6 +7,8 @@ package vistas;
 
 import Entidades.Alumno;
 import java.util.HashSet;
+import java.util.Iterator;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -63,10 +65,20 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
         txtApellido.setToolTipText("");
 
         btnGuardar.setBackground(new java.awt.Color(0, 153, 204));
-        btnGuardar.setText("Guardar");
+        btnGuardar.setText("Actualizar ");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         btnNuevo.setBackground(new java.awt.Color(0, 153, 204));
         btnNuevo.setText("Nuevo");
+        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoActionPerformed(evt);
+            }
+        });
 
         btnSalir.setBackground(new java.awt.Color(0, 153, 204));
         btnSalir.setText("Salir");
@@ -139,7 +151,7 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(68, 68, 68)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,8 +165,73 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-      
+       dispose(); 
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+        // TODO add your handling code here:
+        if(txtlegajo.getText().isEmpty()||txtNombre.getText().isEmpty()||txtApellido.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"no se pueden dejar campos vacios");
+        }
+        
+       if (!txtNombre.getText().matches("[a-zA-Z ]+")|| !txtApellido.getText().matches("[a-zA-Z ]+")) {
+    JOptionPane.showMessageDialog(null, "Solo se permiten letras en NOMBRE,APELLIDO");
+    txtNombre.setText(" ");
+    txtApellido.setText(" ");
+   
+               
+}else{
+  
+           try{
+        int legajo =Integer.parseInt(txtlegajo.getText()) ;
+       
+        String nombre=txtNombre.getText();
+        String apellido = txtApellido.getText();
+        Alumno alu= new Alumno(legajo,nombre,apellido);
+        GestorAlumnos.listaAlumnos.add(alu);
+        JOptionPane.showMessageDialog(null," se agrego el alumno " + alu + " correctamente");
+        txtlegajo.setText(" ");
+        txtNombre.setText(" ");
+        txtApellido.setText(" "); 
+           }catch(NumberFormatException e){
+           JOptionPane.showMessageDialog(null, "Debe ingresar caracteres numericos en legajo");}
+           txtlegajo.setText(" ");
+          
+       }
+    }//GEN-LAST:event_btnNuevoActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        // TODO add your handling code here:
+         if(txtlegajo.getText().isEmpty()||txtNombre.getText().isEmpty()||txtApellido.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"no se pueden dejar campos vacios");
+        }   if (!txtNombre.getText().matches("[a-zA-Z ]+")|| !txtApellido.getText().matches("[a-zA-Z ]+")) {
+    JOptionPane.showMessageDialog(null, "Solo se permiten letras en NOMBRE,APELLIDO");
+    txtNombre.setText(" ");
+    txtApellido.setText(" ");
+        }
+      
+       int legajo2=Integer.parseInt(txtlegajo.getText());
+        Iterator<Alumno> it =GestorAlumnos.listaAlumnos.iterator();
+          while (it.hasNext()) {
+            Alumno next = it.next();
+            if(next.getLegajo()==legajo2){
+                 next.setApellido(txtApellido.getText());
+                 next.setNombre(txtNombre.getText());
+        JOptionPane.showMessageDialog(null," se actualizaron los datos del alumno");
+       
+        break;
+     
+            }
+          }
+      txtlegajo.setText(" ");
+        txtNombre.setText(" ");
+        txtApellido.setText(" ");   
+          
+        
+
+            
+        
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

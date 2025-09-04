@@ -81,6 +81,8 @@ public class Alumno {
     
     
     
+    
+    
     public void agregarMateria(Materia mat){
         if(materias.add(mat)){
            /*System.out.println("Materia "+ mat.getNombre()+ " agregada correctamente");*/
