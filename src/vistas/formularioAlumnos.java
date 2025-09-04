@@ -209,7 +209,7 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
     txtNombre.setText(" ");
     txtApellido.setText(" ");
         }
-      
+      try{
        int legajo2=Integer.parseInt(txtlegajo.getText());
         Iterator<Alumno> it =GestorAlumnos.listaAlumnos.iterator();
           while (it.hasNext()) {
@@ -223,11 +223,13 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
      
             }
           }
+      }catch(NumberFormatException e){
+          JOptionPane.showMessageDialog(null, "debe ingresar caracteres numericos ");
       txtlegajo.setText(" ");
         txtNombre.setText(" ");
         txtApellido.setText(" ");   
           
-        
+      }
 
             
         
