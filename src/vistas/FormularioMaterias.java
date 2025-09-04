@@ -160,37 +160,35 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jtCodigoActionPerformed
             
     private void jbGuardar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardar2ActionPerformed
-        if(jtAño.getText().isEmpty()||jtCodigo.getText().isEmpty()||jtNombreMateria.getText().isEmpty()){
-        JOptionPane.showMessageDialog(null, "Debe ingresar datos..");
+        if (jtAño.getText().isEmpty() || jtCodigo.getText().isEmpty() || jtNombreMateria.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Debe ingresar datos..");
         }
-                // AGREGO UN TRY EN CASO DE QUE EL USUARIO INGRESE CUALQUIER OTRA COSA MAKUMBERA MISITCA
-             try{
-           int codigoMateria = Integer.parseInt(jtCodigo.getText());
-           int anioMateria = Integer.parseInt(jtAño.getText());
-        if (!jtNombreMateria.getText().matches("[a-zA-Z ]+")){
-        JOptionPane.showMessageDialog(null,"No se aceptan caracteres especiales..");
-        jtNombreMateria.setText(" ");
-        return; //para detener la ejecucion .. sirveeee
-        }
-        
- 
-           Iterator <Materia> it = GestorAlumnos.listaMateria.iterator();
-           
-           while(it.hasNext()){
-            Materia ma = it.next();
-            if(ma.getIdMateria()==codigoMateria){
-            ma.setNombre(jtNombreMateria.getText());
-            ma.setAnio(anioMateria);
-            JOptionPane.showMessageDialog(null, "Datos actualizados..");
-            break;
+        // AGREGO UN TRY EN CASO DE QUE EL USUARIO INGRESE CUALQUIER OTRA COSA MAKUMBERA MISITCA
+        try {
+            int codigoMateria = Integer.parseInt(jtCodigo.getText().trim());
+            int anioMateria = Integer.parseInt(jtAño.getText().trim());
+            if (!jtNombreMateria.getText().matches("[a-zA-Z ]+")) {
+                JOptionPane.showMessageDialog(null, "No se aceptan caracteres especiales..");
+                jtNombreMateria.setText(" ");
+                return; //para detener la ejecucion .. sirveeee
             }
-            
-           }
-                }catch (NumberFormatException aux){
-                 JOptionPane.showMessageDialog(null, "El codigo y el año deben ser numeros enteros..");
-                 jtCodigo.setText(" ");
-                 jtAño.setText(" ");
+
+            for (Materia ma : GestorAlumnos.listaMateria) {
+                if (ma.getIdMateria() == codigoMateria) {
+                    ma.setNombre(jtNombreMateria.getText());
+                    ma.setAnio(anioMateria);
+                    JOptionPane.showMessageDialog(null, "Datos actualizados..");
+                    jtCodigo.setText(" ");
+                    jtAño.setText(" ");
+                    jtNombreMateria.setText(" ");
+                    break;
                 }
+            }
+        } catch (NumberFormatException aux) {
+            JOptionPane.showMessageDialog(null, "El codigo y el año deben ser numeros enteros..");
+            jtCodigo.setText(" ");
+            jtAño.setText(" ");
+        }
              
    
     }//GEN-LAST:event_jbGuardar2ActionPerformed

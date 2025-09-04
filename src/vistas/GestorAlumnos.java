@@ -10,6 +10,8 @@ import Entidades.Alumno;
 import Entidades.Materia;
 import colegio.Colegio;
 import java.util.HashSet;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.OK_CANCEL_OPTION;
 
 
 
@@ -94,6 +96,15 @@ public class GestorAlumnos extends javax.swing.JFrame {
         jMenuBar2.add(jMenu5);
 
         jMenu1.setText("Salir");
+        jMenu1.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                jMenu1MenuSelected(evt);
+            }
+        });
         jMenuBar2.add(jMenu1);
 
         setJMenuBar(jMenuBar2);
@@ -149,6 +160,11 @@ public class GestorAlumnos extends javax.swing.JFrame {
         Escritorio.add(formu);
         Escritorio.moveToFront(formu);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenu1MenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_jMenu1MenuSelected
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jMenu1MenuSelected
 
     /**
      * @param args the command line arguments

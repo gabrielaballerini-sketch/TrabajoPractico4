@@ -217,8 +217,8 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
         try {
             legajo2 = Integer.parseInt(txtlegajo.getText().trim());
         } catch (NumberFormatException e) {
-                 JOptionPane.showMessageDialog(null, "Solo se permiten ");
-               txtlegajo.setText("");
+            JOptionPane.showMessageDialog(null, "Solo se permiten ");
+            txtlegajo.setText("");
             txtNombre.setText("");
             txtApellido.setText("");
 
@@ -230,12 +230,13 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
                 next.setNombre(txtNombre.getText());
                 JOptionPane.showMessageDialog(null, " se actualizaron los datos del alumno");
 
+                txtlegajo.setText("");
+                txtNombre.setText("");
+                txtApellido.setText("");
                 return;
 
             }
 
-          
-        
         }
 
        
