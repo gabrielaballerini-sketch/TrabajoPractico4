@@ -202,30 +202,47 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
-         if(txtlegajo.getText().isEmpty()||txtNombre.getText().isEmpty()||txtApellido.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null,"no se pueden dejar campos vacios");
-        }   if (!txtNombre.getText().matches("[a-zA-Z ]+")|| !txtApellido.getText().matches("[a-zA-Z ]+")) {
-    JOptionPane.showMessageDialog(null, "Solo se permiten letras en NOMBRE,APELLIDO");
-    txtNombre.setText(" ");
-    txtApellido.setText(" ");
+        
+        if (txtlegajo.getText().isEmpty() || txtNombre.getText().isEmpty() || txtApellido.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "no se pueden dejar campos vacios");
+            return;
         }
-      
-       int legajo2=Integer.parseInt(txtlegajo.getText());
-        Iterator<Alumno> it =GestorAlumnos.listaAlumnos.iterator();
-          while (it.hasNext()) {
-            Alumno next = it.next();
-            if(next.getLegajo()==legajo2){
-                 next.setApellido(txtApellido.getText());
-                 next.setNombre(txtNombre.getText());
-        JOptionPane.showMessageDialog(null," se actualizaron los datos del alumno");
-       
-        break;
-     
+        if (!txtNombre.getText().matches("[a-zA-Z ]+") || !txtApellido.getText().matches("[a-zA-Z ]+")) {
+            JOptionPane.showMessageDialog(null, "Solo se permiten letras en NOMBRE,APELLIDO");
+            txtNombre.setText(" ");
+            txtApellido.setText(" ");
+            return;
+        }
+        int legajo2 = 0;
+        try {
+            legajo2 = Integer.parseInt(txtlegajo.getText());
+        } catch (NumberFormatException e) {
+                 JOptionPane.showMessageDialog(null, "Solo se permiten caracteres ");
+               txtlegajo.setText(" ");
+            txtNombre.setText(" ");
+            txtApellido.setText(" ");
+
+        }
+        for (Alumno next : GestorAlumnos.listaAlumnos) {
+
+            if (next.getLegajo() == legajo2) {
+                next.setApellido(txtApellido.getText());
+                next.setNombre(txtNombre.getText());
+                JOptionPane.showMessageDialog(null, " se actualizaron los datos del alumno");
+
+                return;
+
             }
-          }
-      txtlegajo.setText(" ");
-        txtNombre.setText(" ");
-        txtApellido.setText(" ");   
+
+          
+        
+        }
+
+       
+
+          
+          
+     
           
         
 
