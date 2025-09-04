@@ -8,7 +8,10 @@ package vistas;
 
 import Entidades.Alumno;
 import Entidades.Materia;
+import colegio.Colegio;
 import java.util.HashSet;
+
+
 
 /**
  *
@@ -16,7 +19,9 @@ import java.util.HashSet;
  */
 public class GestorAlumnos extends javax.swing.JFrame {
    
-  HashSet <Alumno> alumnos;
+    public static HashSet<Alumno> listaAlumnos =new HashSet<>();
+    public static HashSet<Materia> listaMateria =new HashSet<>();
+    
     public GestorAlumnos() {
         initComponents();
         
@@ -137,7 +142,7 @@ public class GestorAlumnos extends javax.swing.JFrame {
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         Escritorio.removeAll();
         Escritorio.repaint();
-        FormularioInscripcion formu = new FormularioInscripcion(alumnos);
+        FormularioInscripcion formu = new FormularioInscripcion();
         formu.setVisible(true);
         Escritorio.add(formu);
         Escritorio.moveToFront(formu);
@@ -171,6 +176,10 @@ public class GestorAlumnos extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        
+           
+       
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GestorAlumnos().setVisible(true);

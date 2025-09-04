@@ -1,7 +1,9 @@
+package colegio;
 
 import Entidades.Alumno;
 import Entidades.Materia;
 import java.util.HashSet;
+import vistas.GestorAlumnos;
 
 
 
@@ -10,8 +12,10 @@ public class Colegio {
     
     
     
-    public static HashSet<Alumno> alumnos =new HashSet<>();
-    public static HashSet<Materia> materia =new HashSet<>();
+   // public static HashSet<Alumno> alumnos =new HashSet<>();
+    //public static HashSet<Materia> materia =new HashSet<>();
+
+  
     
    
     public static void main(String[] args) {
@@ -25,12 +29,17 @@ public class Colegio {
       
       
       
-     alumnos.add(new Alumno (1001, "Lòpez", "Martin"));
-     alumnos.add(new Alumno (1002, "Martínez", "Brenda"));
-    
-      
+     Alumno alumno1= new Alumno (1001, "Lòpez", "Martin");
+     Alumno alumno2= new Alumno (1002, "Martínez", "Brenda");
      
-      /*
+    
+      GestorAlumnos.listaAlumnos.add(alumno2);
+      GestorAlumnos.listaAlumnos.add(alumno1);
+      GestorAlumnos.listaMateria.add(web);
+    
+       
+     
+      
       alumno1.agregarMateria(web);
       alumno1.agregarMateria(matematica);
       alumno1.agregarMateria(laboratorio);
@@ -42,13 +51,11 @@ public class Colegio {
       
       alumno1.cantidadMaterias();
       alumno2.cantidadMaterias();
-      */
       
-    
+        
       
-      
-      
-    
-    
+     
 }
+
+    
 }

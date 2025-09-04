@@ -20,16 +20,14 @@ import java.util.HashSet;
  */
 public class FormularioInscripcion extends javax.swing.JInternalFrame {
 
-    HashSet <Alumno> alumnos;
 
    
     
     
-    public FormularioInscripcion(HashSet <Alumno> alumnos) {
+    public FormularioInscripcion() {
         initComponents();
         llenarCombos();
-        //this.alumnos= alumnos;
-        llenarAlumnos(alumnos);
+        llenarAlumnos();
         
         
     
@@ -155,7 +153,7 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbInscribir;
     private javax.swing.JButton jbSalir3;
-    private javax.swing.JComboBox<String> jcbAlumnos;
+    private javax.swing.JComboBox<Alumno> jcbAlumnos;
     private javax.swing.JComboBox<Materia> jcbMaterias;
     // End of variables declaration//GEN-END:variables
 
@@ -184,12 +182,14 @@ private  void llenarCombos(){
     
 }
 
-private void llenarAlumnos(HashSet<Alumno>alumnos){
+private void llenarAlumnos(){
     
     
-    for (Alumno alumno : alumnos) {
+    for (Alumno alumno : GestorAlumnos.listaAlumnos) {
+         
+       
         
-        jcbAlumnos.addItem(alumno.toString());
+        jcbAlumnos.addItem(alumno);
     
     }
     
