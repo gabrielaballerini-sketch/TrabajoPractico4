@@ -4,6 +4,10 @@
  */
 package vistas;
 
+import Entidades.Materia;
+import java.util.Iterator;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Brian D
@@ -52,12 +56,27 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
 
         jbGuardar2.setBackground(new java.awt.Color(102, 255, 204));
         jbGuardar2.setText("Guardar");
+        jbGuardar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbGuardar2ActionPerformed(evt);
+            }
+        });
 
         jbNuevo2.setBackground(new java.awt.Color(102, 255, 204));
         jbNuevo2.setText("Nuevo");
+        jbNuevo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbNuevo2ActionPerformed(evt);
+            }
+        });
 
         jbSalir2.setBackground(new java.awt.Color(102, 255, 204));
         jbSalir2.setText("Salir");
+        jbSalir2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSalir2ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 2, 18)); // NOI18N
         jLabel4.setText("Formulario de materias");
@@ -139,6 +158,74 @@ public class FormularioMaterias extends javax.swing.JInternalFrame {
     private void jtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtCodigoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtCodigoActionPerformed
+            
+    private void jbGuardar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardar2ActionPerformed
+        if(jtAño.getText().isEmpty()||jtCodigo.getText().isEmpty()||jtNombreMateria.getText().isEmpty()){
+        JOptionPane.showMessageDialog(null, "Debe ingresar datos..");
+        }
+                // AGREGO UN TRY EN CASO DE QUE EL USUARIO INGRESE CUALQUIER OTRA COSA MAKUMBERA MISITCA
+             try{
+           int codigoMateria = Integer.parseInt(jtCodigo.getText());
+           int anioMateria = Integer.parseInt(jtAño.getText());
+        if (!jtNombreMateria.getText().matches("[a-zA-Z ]+")){
+        JOptionPane.showMessageDialog(null,"No se aceptan caracteres especiales..");
+        jtNombreMateria.setText(" ");
+        return; //para detener la ejecucion .. sirveeee
+        }
+        
+ 
+           Iterator <Materia> it = GestorAlumnos.listaMateria.iterator();
+           
+           while(it.hasNext()){
+            Materia ma = it.next();
+            if(ma.getIdMateria()==codigoMateria){
+            ma.setNombre(jtNombreMateria.getText());
+            ma.setAnio(anioMateria);
+            JOptionPane.showMessageDialog(null, "Datos actualizados..");
+            break;
+            }
+            
+           }
+                }catch (NumberFormatException aux){
+                 JOptionPane.showMessageDialog(null, "El codigo y el año deben ser numeros enteros..");
+                 jtCodigo.setText(" ");
+                 jtAño.setText(" ");
+                }
+             
+   
+    }//GEN-LAST:event_jbGuardar2ActionPerformed
+
+    private void jbNuevo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNuevo2ActionPerformed
+        if(jtAño.getText().isEmpty()||jtCodigo.getText().isEmpty()||jtNombreMateria.getText().isEmpty()){
+        JOptionPane.showMessageDialog(null, "Debe ingresar datos..");
+        }
+        if (!jtNombreMateria.getText().matches("[a-zA-Z ]+")){
+        JOptionPane.showMessageDialog(null,"No se aceptan caracteres especiales..");
+        jtNombreMateria.setText(" ");
+        }else{
+        
+        try{
+            int numCodigo = Integer.parseInt(jtCodigo.getText());
+            String nombreMateria = jtNombreMateria.getText();
+            int numAnio = Integer.parseInt(jtAño.getText());
+            Materia alumAux = new Materia(numCodigo,nombreMateria,numAnio);
+            GestorAlumnos.listaMateria.add(alumAux);
+            JOptionPane.showMessageDialog(null, "Se agrego correctamente la materia");
+            jtCodigo.setText(" ");
+            jtNombreMateria.setText(" ");
+            jtAño.setText(" ");
+        }catch(NumberFormatException vivaPeron){
+        JOptionPane.showMessageDialog(null,"Datos incorrectos, vuelva a intentar");
+                jtCodigo.setText(" ");
+                jtNombreMateria.setText(" ");
+                 jtAño.setText(" ");
+            }
+        }
+    }//GEN-LAST:event_jbNuevo2ActionPerformed
+
+    private void jbSalir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalir2ActionPerformed
+         dispose(); 
+    }//GEN-LAST:event_jbSalir2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
