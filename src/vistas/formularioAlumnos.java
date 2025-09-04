@@ -209,18 +209,18 @@ public class formularioAlumnos extends javax.swing.JInternalFrame {
         }
         if (!txtNombre.getText().matches("[a-zA-Z ]+") || !txtApellido.getText().matches("[a-zA-Z ]+")) {
             JOptionPane.showMessageDialog(null, "Solo se permiten letras en NOMBRE,APELLIDO");
-            txtNombre.setText(" ");
-            txtApellido.setText(" ");
+            txtNombre.setText("");
+            txtApellido.setText("");
             return;
         }
         int legajo2 = 0;
         try {
-            legajo2 = Integer.parseInt(txtlegajo.getText());
+            legajo2 = Integer.parseInt(txtlegajo.getText().trim());
         } catch (NumberFormatException e) {
-                 JOptionPane.showMessageDialog(null, "Solo se permiten caracteres ");
-               txtlegajo.setText(" ");
-            txtNombre.setText(" ");
-            txtApellido.setText(" ");
+                 JOptionPane.showMessageDialog(null, "Solo se permiten ");
+               txtlegajo.setText("");
+            txtNombre.setText("");
+            txtApellido.setText("");
 
         }
         for (Alumno next : GestorAlumnos.listaAlumnos) {
