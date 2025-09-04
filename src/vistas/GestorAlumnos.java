@@ -24,6 +24,8 @@ public class GestorAlumnos extends javax.swing.JFrame {
     
     public GestorAlumnos() {
         initComponents();
+        String[] argumentos = {};
+        Colegio.main(argumentos);
         
     }
 

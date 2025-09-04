@@ -2,6 +2,7 @@
 package Entidades;
 
 import java.util.HashSet;
+import javax.swing.JOptionPane;
 
 
 public class Alumno {
@@ -45,10 +46,8 @@ public class Alumno {
         this.nombre = nombre;
     }
 
-    @Override
-    public String toString() {
-        return  apellido + " " +  nombre  + '}';
-    }
+
+  
 
     @Override
     public int hashCode() {
@@ -74,14 +73,20 @@ public class Alumno {
         }
         return true;
     }
+    @Override
+      public String toString() {
+        return   apellido + " "+ nombre ;
+    }
     
     
     
     public void agregarMateria(Materia mat){
         if(materias.add(mat)){
-            System.out.println("Materia "+ mat.getNombre()+ " agregada correctamente");
+           /*System.out.println("Materia "+ mat.getNombre()+ " agregada correctamente");*/
+            JOptionPane.showMessageDialog(null, "se agrego la materia correctamente");
         } else {
-            System.out.println("En la materia "+ mat.getNombre()+ " ya esta inscripto/a");
+            /*System.out.println("En la materia "+ mat.getNombre()+ " ya esta inscripto/a");*/
+             JOptionPane.showMessageDialog(null, "no se grego, la materia ya existe");
         }
         
     }

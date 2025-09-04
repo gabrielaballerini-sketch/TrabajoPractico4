@@ -12,7 +12,7 @@ package vistas;
 
 import Entidades.Alumno;
 import Entidades.Materia;
-import java.util.HashSet;
+
 
 /**
  *
@@ -71,9 +71,25 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
             }
         });
 
+        jcbAlumnos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbAlumnosActionPerformed(evt);
+            }
+        });
+
         jbInscribir.setText("Inscribir");
+        jbInscribir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbInscribirActionPerformed(evt);
+            }
+        });
 
         jbSalir3.setText("Salir");
+        jbSalir3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSalir3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -145,6 +161,23 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jcbMateriasActionPerformed
 
+    private void jcbAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbAlumnosActionPerformed
+      
+    }//GEN-LAST:event_jcbAlumnosActionPerformed
+
+    private void jbInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbInscribirActionPerformed
+        // TODO add your handling code here:
+       Materia materiaSeleccionada=(Materia)jcbMaterias.getSelectedItem();
+       Alumno alumnoSeleccionado=(Alumno)jcbAlumnos.getSelectedItem();
+       alumnoSeleccionado.agregarMateria(materiaSeleccionada);
+        
+    }//GEN-LAST:event_jbInscribirActionPerformed
+
+    private void jbSalir3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalir3ActionPerformed
+        // TODO add your handling code here:
+         dispose(); 
+    }//GEN-LAST:event_jbSalir3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -162,39 +195,22 @@ public class FormularioInscripcion extends javax.swing.JInternalFrame {
 private  void llenarCombos(){
     
     
+    for (Materia mate : GestorAlumnos.listaMateria) {
+          jcbMaterias.addItem(mate);
     
-    
-    
-      Materia materia1=new Materia(001, "Web 2", 2);
       
-       Materia materia2=new Materia(002, "Matematicas", 1);
-      
-        Materia materia3=new Materia(003, "Laboratorio", 1);
-    
-    
-    jcbMaterias.addItem(materia1);
-     jcbMaterias.addItem(materia2);
-      jcbMaterias.addItem(materia3);
-    
-    
-    
-    
-    
 }
-
+}
 private void llenarAlumnos(){
     
     
-    for (Alumno alumno : GestorAlumnos.listaAlumnos) {
-         
-       
+      for (Alumno alu : GestorAlumnos.listaAlumnos) {
+          jcbAlumnos.addItem(alu);
         
-        jcbAlumnos.addItem(alumno);
-    
     }
-    
   
     
+   
     
 }
 }

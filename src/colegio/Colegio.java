@@ -9,12 +9,13 @@ import vistas.GestorAlumnos;
 
 
 public class Colegio {
-    
-    
-    
-   // public static HashSet<Alumno> alumnos =new HashSet<>();
-    //public static HashSet<Materia> materia =new HashSet<>();
 
+    public Colegio() {
+    }
+    
+    
+    
+   
   
     
    
@@ -36,18 +37,13 @@ public class Colegio {
       GestorAlumnos.listaAlumnos.add(alumno2);
       GestorAlumnos.listaAlumnos.add(alumno1);
       GestorAlumnos.listaMateria.add(web);
+      GestorAlumnos.listaMateria.add(matematica);
+      GestorAlumnos.listaMateria.add(laboratorio);
     
        
      
       
-      alumno1.agregarMateria(web);
-      alumno1.agregarMateria(matematica);
-      alumno1.agregarMateria(laboratorio);
-      
-      alumno2.agregarMateria(web);
-      alumno2.agregarMateria(matematica);
-      alumno2.agregarMateria(laboratorio);
-      alumno2.agregarMateria(laboratorio);
+
       
       alumno1.cantidadMaterias();
       alumno2.cantidadMaterias();
